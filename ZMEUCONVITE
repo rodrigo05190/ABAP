@@ -6,7 +6,7 @@
 
 
 
-REPORT z_meuconvite.
+REPORT ZMEUCONVITE.
 
 * Declaração de variáveis
 DATA ld_nome(100) TYPE c.

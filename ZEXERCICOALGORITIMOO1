@@ -1,0 +1,20 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERCICOALGORITIMOO1
+*&---------------------------------------------------------------------*
+*&  Considerando o prazo de pagamento de 30 dias, informar uma data de venda e calcular a data de
+*&  vencimento para ser impressa no boleto. Exibir na tela as duas datas.
+*&---------------------------------------------------------------------*
+REPORT ZEXERCICOALGORITIMOO1.
+
+DATA: PRAZO           TYPE I,         " Variável para armazenar o prazo de pagamento em dias
+      DT_VENDA        TYPE D,         " Variável para armazenar a data de venda
+      DT_VENCIMENTO   TYPE D.         " Variável para armazenar a data de vencimento
+
+PRAZO = 30.                           " Prazo de pagamento em dias
+DT_VENDA = SY-DATUM.                  " Data atual de venda
+
+DT_VENCIMENTO = DT_VENDA + PRAZO.     " Cálculo da data de vencimento
+
+WRITE: / 'Data de Venda:', DT_VENDA DD/MM/YY,
+       / 'Prazo de Pagamento (dias):', PRAZO,
+       / 'Data de Vencimento:', DT_VENCIMENTO DD/MM/YY.

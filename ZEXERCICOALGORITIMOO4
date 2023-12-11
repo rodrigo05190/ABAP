@@ -1,0 +1,19 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERCICOALGORITIMOO4
+*&---------------------------------------------------------------------*
+*& Considerando um kit de natal de R$ 166,00 , calcule quantos kits podem ser comprados com R$ 10.000,00
+*&para ser criado um documento de vendas
+*&---------------------------------------------------------------------*
+REPORT ZEXERCICOALGORITIMOO4.
+
+DATA: KIT TYPE P DECIMALS 2,        " Valor do kit
+      DINHEIRO TYPE P DECIMALS 2,   " Valor disponível em dinheiro
+      TOTAL TYPE I.                  " Quantidade total de kits que podem ser comprados
+
+KIT = '166.00'.                    " Valor do kit
+DINHEIRO = '10000.00'.             " Valor disponível em dinheiro
+TOTAL = TRUNC( DINHEIRO / KIT ).    " Cálculo da quantidade total de kits que podem ser comprados
+
+WRITE: / 'Valor disponível:', DINHEIRO,
+       / 'Valor do kit:', KIT,
+       / 'Quantidade de kits que podem ser comprados:', TOTAL.

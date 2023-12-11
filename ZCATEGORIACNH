@@ -1,4 +1,4 @@
-REPORT Z_CNHCATEGORIA.
+REPORT ZCATEGORIACNH.
 
 * Declaração de variável para armazenar a categoria da CNH
 DATA: CAT(50) TYPE C.

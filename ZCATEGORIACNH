@@ -1,0 +1,30 @@
+REPORT Z_CNHCATEGORIA.
+
+* Declaração de variável para armazenar a categoria da CNH
+DATA: CAT(50) TYPE C.
+
+* Definição dos parâmetros de entrada na tela de seleção
+SELECTION-SCREEN BEGIN OF BLOCK B1.
+  PARAMETERS: P_CAT(1) TYPE C.  " Parâmetro para a categoria da CNH
+SELECTION-SCREEN END OF BLOCK B1.
+
+START-OF-SELECTION.
+
+  * Utilização da estrutura CASE para determinar a categoria com base no parâmetro informado
+  CASE P_CAT.
+    WHEN 'A'.
+      CAT = TEXT-001.  " Atribuição da descrição da categoria A à variável CAT
+    WHEN 'B'.
+      CAT = TEXT-002.  " Atribuição da descrição da categoria B à variável CAT
+    WHEN 'C'.
+      CAT = TEXT-003.  " Atribuição da descrição da categoria C à variável CAT
+    WHEN 'D'.
+      CAT = TEXT-004.  " Atribuição da descrição da categoria D à variável CAT
+    WHEN 'E'.
+      CAT = TEXT-005.  " Atribuição da descrição da categoria E à variável CAT
+    WHEN OTHERS.
+      CAT = TEXT-006.  " Atribuição da descrição padrão em caso de valor não previsto
+  ENDCASE.
+
+  * Exibição da categoria na tela
+  WRITE: CAT.

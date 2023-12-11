@@ -1,0 +1,49 @@
+*&---------------------------------------------------------------------*
+*& Report z_convite
+*&---------------------------------------------------------------------*
+*&
+*&---------------------------------------------------------------------*
+
+
+
+REPORT z_meuconvite.
+
+* Declaração de variáveis
+DATA ld_nome(100) TYPE c.
+DATA ld_sobrenome(100) TYPE c.
+DATA ld_nomecompleto(100) TYPE c.
+
+* Constantes para informações do evento
+CONSTANTS ld_data(10) TYPE c VALUE '04/12/2023'.
+CONSTANTS ld_hora(10) TYPE c VALUE '16:04'.
+CONSTANTS ld_endereco(50) TYPE c VALUE 'RUA CALIXTO GARCIA ,101'.
+
+* Atribuição de valores aos nomes
+ld_nome = 'Rodrigo'.
+ld_sobrenome = 'da Silva Lima'.
+
+* Concatenação do nome e sobrenome
+CONCATENATE ld_nome ld_sobrenome
+    INTO ld_nomecompleto.
+
+* Exibição do convite
+WRITE: 'Olá ', ld_nomecompleto.
+SKIP.
+WRITE 'Você está convidado para a nossa Festa Inesquecível!'.
+NEW-LINE.
+SKIP.
+WRITE 'Estamos emocionados em convidar você para a nossa festa especial.'.
+NEW-LINE.
+SKIP.
+WRITE 'Detalhes do Evento:'.
+NEW-LINE.
+SKIP.
+WRITE: 'Data:', ld_data.
+NEW-LINE.
+SKIP.
+WRITE: 'Hora:', ld_hora.
+NEW-LINE.
+SKIP.
+WRITE: 'Local: ', ld_endereco.
+SKIP.
+NEW-LINE.

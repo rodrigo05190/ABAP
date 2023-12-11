@@ -1,0 +1,20 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERCICOALGORITIMOO5
+*&---------------------------------------------------------------------*
+*& Para fabricar um motor são necessárias 4 bobinas. Calcule quantas bobinas são necessárias para fabricar 32 motores.
+*&---------------------------------------------------------------------*
+
+REPORT ZEXERCICOALGORITIMOO5.
+
+DATA: BOBINAS TYPE I,      " Quantidade de bobinas
+      MOTORES TYPE I,      " Quantidade de motores
+      TOTAL TYPE I.        " Total necessário para fabricação
+
+BOBINAS = 4.              " Número de bobinas necessárias
+MOTORES = 32.             " Número de motores necessários
+TOTAL = BOBINAS * MOTORES. " Cálculo do total necessário para fabricação
+
+WRITE:
+  / 'Quantidade de Bobinas:', BOBINAS,
+  / 'Quantidade de Motores:', MOTORES,
+  / 'Total Necessário para Fabricação:', TOTAL.

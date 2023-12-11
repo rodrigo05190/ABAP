@@ -1,0 +1,29 @@
+*&---------------------------------------------------------------------*
+*& Report Z_EXERCICIOALGO_7
+*&---------------------------------------------------------------------*
+*& Faça um algoritmo para ler o salário de um funcionário e aumentá-lo em 15%. 
+*& Após o aumento, desconte 8% de impostos. Imprima o salário inicial, o salário 
+*& com o aumento e o salário final
+*&---------------------------------------------------------------------*
+REPORT Z_EXERCICIOALGO_7.
+
+PARAMETERS: P_SAL TYPE P DECIMALS 2.    " Parâmetro para o salário inicial
+
+DATA:  AUMENTO TYPE P DECIMALS 2,      " Percentual de aumento
+       IMPOSTO TYPE P DECIMALS 2,      " Percentual de impostos
+       V_IMPOSTO TYPE P DECIMALS 2,    " Valor do imposto a ser descontado
+       V_AUMENTO TYPE P DECIMALS 2,    " Valor do aumento
+       V_FINAL TYPE P DECIMALS 2.      " Salário final após o aumento e desconto de impostos
+
+AUMENTO = '0.15'.                      " Percentual de aumento (15%)
+IMPOSTO = '0.08'.                      " Percentual de impostos a ser descontado (8%)
+
+V_AUMENTO = P_SAL * AUMENTO.           " Cálculo do valor do aumento
+V_IMPOSTO = (P_SAL + V_AUMENTO) * IMPOSTO.  " Cálculo do valor do imposto a ser descontado
+V_FINAL = P_SAL + V_AUMENTO - V_IMPOSTO.     " Cálculo do salário final
+
+* Imprimir resultados
+WRITE: / 'Salário Inicial: ', P_SAL,
+       / 'Aumento (15%): ', V_AUMENTO,
+       / 'Imposto (8%): ', V_IMPOSTO,
+       / 'Salário Final: ', V_FINAL.

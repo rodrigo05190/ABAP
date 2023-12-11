@@ -1,0 +1,28 @@
+*&---------------------------------------------------------------------*
+*& Report ZEXERCICOALGORITIMOO3
+*&---------------------------------------------------------------------*
+*&  Para uma venda de R$2.500,00, calcule o valor de icms de 18% e Fundo de Combate a Pobreza de 2%
+*&para ser impresso no recibo
+*&---------------------------------------------------------------------*
+REPORT ZEXERCICOALGORITIMOO3.
+
+
+DATA: VENDA TYPE P DECIMALS 2,      " Valor da venda
+      ICMS TYPE P DECIMALS 2,      " Percentual de ICMS
+      FCP TYPE P DECIMALS 2.       " Percentual de FCP
+
+DATA valor_icms TYPE P DECIMALS 2.  " Valor do ICMS
+DATA valor_fcp TYPE P DECIMALS 2.   " Valor do FCP
+
+
+VENDA = '2500.00'.                  " Valor da venda
+ICMS = '0.18'.                      " Percentual de ICMS
+FCP = '0.02'.                       " Percentual de FCP
+
+valor_icms = VENDA * ICMS.          " Cálculo do valor do ICMS
+valor_fcp = VENDA * FCP.            " Cálculo do valor do FCP
+
+* Exibindo os resultados
+WRITE: / 'Valor da Venda:', VENDA,
+       / 'Valor do ICMS (18%):', valor_icms,
+       / 'Valor do FCP (2%):', valor_fcp.

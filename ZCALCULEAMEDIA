@@ -1,4 +1,4 @@
-REPORT Z_CALCULEMEDIA.
+REPORT ZCALCULEMEDIA.
 
 * Definição dos parâmetros para as notas dos quatro bimestres
 SELECTION-SCREEN BEGIN OF BLOCK B1.

@@ -1,0 +1,17 @@
+REPORT Z_CALCULORAIOAREA.
+
+* Definição da constante PI
+CONSTANTS LC_PI(12) TYPE P DECIMALS 13 VALUE '3.14159265'.
+
+* Declaração de variáveis
+DATA LD_RADIO(12) TYPE P DECIMALS 2.  " Variável para armazenar o raio
+DATA LD_AREA(12) TYPE P DECIMALS 2.   " Variável para armazenar a área
+
+* Atribuição de um valor ao raio
+LD_RADIO = 15.
+
+* Cálculo da área do círculo usando a fórmula A = π * r²
+LD_AREA = ( LD_RADIO * LD_RADIO ) * LC_PI.
+
+* Exibição do resultado na tela
+WRITE: 'A área de um círculo com raio de', LD_RADIO, 'é', LD_AREA.

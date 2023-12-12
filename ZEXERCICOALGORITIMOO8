@@ -1,0 +1,31 @@
+*&---------------------------------------------------------------------*
+*& Report zexercicoalgoritimoo8
+*&---------------------------------------------------------------------*
+*& Faça um algoritmo que leia os valores Quantidade, Preço, Limite e imprima na tela se a multiplicação de
+*& Quantidade por Preço é menor que Limite
+*&---------------------------------------------------------------------*
+REPORT ZEXERCICOALGORITIMOO8.
+
+
+PARAMETERS: QTD TYPE I,
+      PRECO TYPE P DECIMALS 2.
+
+
+DATA: TOTAL TYPE I,
+      LIMITE TYPE I.
+
+LIMITE = 20.
+
+TOTAL = QTD * PRECO.
+
+IF ( TOTAL ) < LIMITE .
+    WRITE :
+    /'Quantidade:', QTD ,
+    /'Preço:', PRECO ,
+    /'A multiplicação é menor que o Limite'.
+ELSE.
+    WRITE:
+    /'Quantidade:', QTD ,
+    /'Preço:', PRECO ,
+    /'A multiplicação é maior ou igual ao Limite'.
+ENDIF.
